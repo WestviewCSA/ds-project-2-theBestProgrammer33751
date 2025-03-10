@@ -4,3 +4,11 @@ Due: 3/12/25 11:59pm
 
 After reading the specs, start populating a list of things you think you might have to do to finish this project
  
+ 1) read the specs - understand
+ 2) Understand map-based input files
+ 
+ 
+ Design Plan:
+ 
+ 	1) Make a 2 level maze in coordinate style
+ 	2) Place the starting position 
