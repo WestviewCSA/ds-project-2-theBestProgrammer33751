@@ -10,5 +10,19 @@ After reading the specs, start populating a list of things you think you might h
  
  Design Plan:
  
- 	1) Make a 2 level maze in coordinate style
- 	2) Place the starting position 
+	---> Make a 3D Array with three dimensions for the map
+	---> Set the first dimension to store the number of maps/levels
+		---> In this case, there will be 2 level map
+	---> Set the second dimension to store the number of rows in each level
+		---> In this case, there will be 25 rows
+	---> Set the third dimension to store the number of columns in each row
+		---> In this case, there will be 50 columns
+	
+		Queue Based Approach:
+			
+			---> Set up an empty Queue
+			---> Enqueue the coordinate of the start position
+			---> 
+	
+	
+ 	
