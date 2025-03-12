@@ -9,20 +9,30 @@ After reading the specs, start populating a list of things you think you might h
  
  
  Design Plan:
- 
-	---> Make a 3D Array with three dimensions for the map
-	---> Set the first dimension to store the number of maps/levels
-		---> In this case, there will be 2 level map
-	---> Set the second dimension to store the number of rows in each level
-		---> In this case, there will be 25 rows
-	---> Set the third dimension to store the number of columns in each row
-		---> In this case, there will be 50 columns
+	---> Make a readMap method where it can take the test-case Maps through a file reader
+	---> Use a scanner to see the input within the file
+	---> Create a 3D Array with the number of rows, number of columns & the number of maze rooms
+	---> Instantiate a two step iteration with the outer loop checking to see if there is another row
+	---> The inner loop should be checking to see if the iterator has reached the end of the number of columns yet
+	---> While these two conditions are now met, check & store each element at that position in a char
+	---> Take each element & store it within the 3D Array created earlier
+		---> Store this element at the index for which row we are currently in
+		---> Store this element at the index for which column we are currently in
+	---> Add a conditional to check if the character at the current location in the map
+		 is that of the open walkway (|).
+		---> If the current character is that of the open walkway, then update the index for the rows & change the 
+		     columns back to the first index (0).
+		---> Start the iteration process over again from that row & column row index
 	
-		Queue Based Approach:
-			
-			---> Set up an empty Queue
-			---> Enqueue the coordinate of the start position
-			---> 
+	Make a Queue Based Approach for this
+	 ---> Create an empty Queue object
+	 ---> Wherever the start position is, enqueue that position in
+	 ---> Dequeue the start position from the queue immediately
+	 ---> From the position that was just dequeued, iterate in the directions of North, South, West & East
+	 	---> While the iteration is going, enqueue all of the "." tiles along the way
+	 ---> 
+	 
+		
 	
 	
  	
