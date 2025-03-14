@@ -86,6 +86,11 @@ public class p2 {
 		Queue<Tile> queue = new LinkedList<>();
 		queue.add(pollySpot);
 		
+		for(int i = pollySpot.getRoom(); i < duckTiles.length; i++) {
+			for(int j = pollySpot.getCol(); i < duckTiles[i].length; j++) {
+				//for()
+			}
+		}
 		
 		
 		
