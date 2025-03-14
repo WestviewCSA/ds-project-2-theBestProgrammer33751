@@ -3,6 +3,7 @@ import java.io.File;
 import java.util.Queue;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.LinkedList;
 import java.util.Scanner;
 
@@ -42,7 +43,7 @@ public class p2 {
 		 						char element = row.charAt(i);
 		 						Tile theTile = new Tile(rowIndex, colsIndex, element);
 		 						tiles[rowIndex][i][roomsIndex] = theTile;
-		 						colsIndex++;
+		 					//	colsIndex++;
 		 						
 		 						if(element == '|') {
 		 							roomsIndex++;
@@ -56,7 +57,7 @@ public class p2 {
 		 			}
 		 			
 		 		return tiles;
-			
+		 		
 			}
 		catch (FileNotFoundException e) {
 			System.out.println(e);
@@ -66,32 +67,30 @@ public class p2 {
 		
 	}
 	
-	public static int findStartingRow(Tile[][][] themTiles) {
-		int row = 0;
+	public static Tile findStartingPosition(Tile[][][] themTiles) {
+		Tile startingPosition = null;
 		for(int i = 0; i < themTiles.length; i++) {
 			for(int j = 0; j < themTiles[i].length; j++) {
 				for(int k = 0; k < themTiles[i][j].length; k++) {
 					if(themTiles[i][j][k].equals('W')) {
-						row = j;
+						startingPosition = themTiles[i][j][k];
 					}
 				}
 			}
 		}
-		return row;
+		return startingPosition;
 	}
 	
-	public static int findStartingColumn(Tile[][][] allThemTiles) {
-		int column = 0;
-		for(int i = 0; i < allThemTiles.length; i++) {
-			for(int j = 0; j < allThemTiles[i].length; j++) {
-				for(int k = 0; k < allThemTiles[i][j].length; k++) {
-					if(allThemTiles[i][j][k].equals('W')) {
-						column = k;
-					}
-				}
-			}
-		}
-		return column;
+	public static void queueStartingPoint(Tile[][][] duckTiles) {
+		Tile pollySpot = findStartingPosition((readMap("fileName.txt")));
+		Queue<Tile> queue = new LinkedList<>();
+		queue.add(pollySpot);
+		
+		
+		
+		
+		
 	}
+	
 
 }
