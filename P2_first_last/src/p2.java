@@ -1,5 +1,6 @@
 import java.io.File;
 
+
 import java.util.Queue;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
@@ -8,7 +9,7 @@ import java.util.LinkedList;
 import java.util.Scanner;
 
 public class p2 {
-
+	static Queue<Tile> queue = new LinkedList();
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		System.out.println("p2");
@@ -41,7 +42,7 @@ public class p2 {
 		 				if(row.length() > 0) {
 		 					for(int i = 0; i < numCols && i < row.length(); i++) {
 		 						char element = row.charAt(i);
-		 						Tile theTile = new Tile(rowIndex, colsIndex, element);
+		 						Tile theTile = new Tile(rowIndex, colsIndex, roomsIndex, element);
 		 						tiles[rowIndex][i][roomsIndex] = theTile;
 		 					//	colsIndex++;
 		 						
@@ -82,18 +83,13 @@ public class p2 {
 	}
 	
 	public static void queueStartingPoint(Tile[][][] duckTiles) {
-		Tile pollySpot = findStartingPosition((readMap("fileName.txt")));
-		Queue<Tile> queue = new LinkedList<>();
-		queue.add(pollySpot);
+			
 		
-		for(int i = pollySpot.getRoom(); i < duckTiles.length; i++) {
-			for(int j = pollySpot.getCol(); i < duckTiles[i].length; j++) {
-				//for()
-			}
-		}
-		
-		
-		
+		Tile daPosition = findStartingPosition(duckTiles);
+		queue.add(findStartingPosition(duckTiles));
+	}
+	
+	public static void dequeueNextPosition(Tile[][][] duckTiles) {
 		
 	}
 	
