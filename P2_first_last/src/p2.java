@@ -10,6 +10,7 @@ import java.util.Scanner;
 
 public class p2 {
 	static Queue<Tile> queue = new LinkedList();
+	static Queue<Tile> visited = new LinkedList();
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		System.out.println("p2");
@@ -33,7 +34,7 @@ public class p2 {
 			int colsIndex = 0;
 			int roomsIndex = 0;
 			//int roomIndex = 0;
-			//process the map!
+		       	//process the map!
 		 		
 		 			while(scanner.hasNextLine()) {
 					//grab a line (one row of the map)
@@ -89,7 +90,37 @@ public class p2 {
 		queue.add(findStartingPosition(duckTiles));
 	}
 	
-	public static void dequeueNextPosition(Tile[][][] duckTiles) {
+	public static void dequeueCurrentPosition(Tile[][][] duckTiles) {
+		Tile curr = queue.poll();
+		visited.add(curr);
+		
+		for(int i = curr.getRow(); i > 0; i--) {
+			if(duckTiles[curr.getRoom()][i][curr.getCol()].equals('.')) {
+				queue.add(duckTiles[curr.getRoom()][i][curr.getCol()]);
+			}
+		}
+		
+		for(int i = curr.getRow(); i < duckTiles.length; i++) {
+			if(duckTiles[curr.getRoom()][i][curr.getCol()].equals('.')) {
+				queue.add(duckTiles[curr.getRoom()][i][curr.getCol()]);
+			}
+		}
+		
+		for(int i = curr.getCol(); i < duckTiles[curr.getRow()].length; i++) {
+			if(duckTiles[curr.getRoom()][curr.getCol()][i].equals('.')) {
+				queue.add(duckTiles[curr.getRoom()][curr.getRow()][i]);
+			}
+		}
+		
+		for(int i = curr.getCol(); i > 0; i--) {
+			if(duckTiles[curr.getRoom()][curr.getRow()][i].equals('.')) {
+				queue.add(duckTiles[curr.getRoom()][curr.getRow()][i]);
+			}
+		}
+		
+		
+		
+		
 		
 	}
 	
