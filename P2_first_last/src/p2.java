@@ -116,6 +116,16 @@ public class p2 {
 			}
 		}
 		
+		while(!queue.isEmpty()) {
+			
+			Tile current = queue.poll();
+			if(!current.equals('$')) {
+				visited.add(current);
+				
+			}
+			
+			
+		}
 		
 		
 		
