@@ -83,16 +83,12 @@ public class p2 {
 		return startingPosition;
 	}
 	
-	public static void queueStartingPoint(Tile[][][] duckTiles) {
-			
-		
-		Tile daPosition = findStartingPosition(duckTiles);
-		queue.add(findStartingPosition(duckTiles));
-	}
 	
 	public static void dequeueCurrentPosition(Tile[][][] duckTiles) {
-		Tile curr = queue.poll();
+		Tile curr = findStartingPosition(duckTiles);
+		queue.add(curr);
 		visited.add(curr);
+		
 		
 		
 		
