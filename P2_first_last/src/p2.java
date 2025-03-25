@@ -94,6 +94,8 @@ public class p2 {
 		Tile curr = queue.poll();
 		visited.add(curr);
 		
+		
+		
 		for(int i = curr.getRow(); i > 0; i--) {
 			if(duckTiles[curr.getRoom()][i][curr.getCol()].equals('.')) {
 				queue.add(duckTiles[curr.getRoom()][i][curr.getCol()]);
