@@ -8,7 +8,6 @@ public class Tile {
 		super();
 		this.row = row;
 		this.col = col;
-		this.room = room;
 		this.type = type;
 	}
 	public int getRow() {
@@ -22,12 +21,6 @@ public class Tile {
 	}
 	public void setCol(int col) {
 		this.col = col;
-	}
-	public void setRoom(int room) {
-		this.room = room;
-	}
-	public int getRoom() {
-		return room;
 	}
 	public char getType() {
 		return type;

@@ -1,14 +1,11 @@
 
 public class Map {
 
-	private Tile[][][] map; //is 2D enough
-	
-	private int rooms;
+	private Tile[][] map; //is 2D enough
 	private int rows;
 	private int columns;
 	
-	public Map(int rooms,int rows, int columns) {
-		this.rooms = rooms;
+	public Map(int rows, int columns) {
 		this.rows = rows;
 		this.columns = columns;
 	}
